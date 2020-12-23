@@ -1,1 +1,1 @@
-print("hello there sir")
+print("potato")
