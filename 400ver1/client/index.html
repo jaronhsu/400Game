@@ -1,0 +1,1036 @@
+<style>
+    body {
+        background: #3498db;
+    }
+    /* -------------------------------------------------------------------------------------------------------------------------- CHAT */
+    .chatContainer {
+        background: white;
+        width: 25%;
+        height: 80%;
+        border-radius: 6px;
+        float: right;
+        margin: 5% 3% 1% 1%;
+        padding: 10px;
+        text-align: center;
+        box-shadow: 5px 5px 10px #888888;
+    }
+    .chatBox {
+        background: #f4f4f4;
+        border-radius: 5px;
+        width: 90%;
+        height: 85%;
+        /* margin: 5% auto 5% auto; */
+        margin: 2% auto 5% auto;
+        border: 1px solid;
+        border-color: #f4f4f4;
+        overflow-y: scroll;
+    }
+    .chatCell {
+        background: white;
+        width: 100%;
+        height: 7%;
+        margin: auto auto 1px auto;
+    }
+    .btn {
+        background: #2ecc71;
+        height: 30px;
+        color: white;
+        border-radius: 4px;
+    }
+    .btn:hover {
+        background: #2CC06B;
+    }
+    /* -------------------------------------------------------------------------------------------------------------------------- GAME */
+    .gameContainer {
+        background: rgb(255, 255, 255);
+        width: 65%;
+        height: 80%;
+        border-radius: 6px;
+        float: left;
+        margin: 5% 1% 1% 3%;
+        padding: 10px;
+        text-align: center;
+        box-shadow: 5px 5px 10px #888888;
+        position: relative;
+    }
+    /* -------------------------------------------------------------------------------------------------------------------------- TOP */
+    .topBar {
+        width:100%;
+        height:20%;
+        display:flex;
+        /* top:2%; */
+    }
+    .playerNumber {
+        background: rgb(131, 131, 131);
+        width: 25%;
+        height: 40%;
+        border-radius: 10px;
+        display:inline-block;
+    }
+    .playerCard2 {
+        background:rgb(136, 240, 158);
+        width: 23.5%;
+        height: 80%;
+        margin: auto;
+        margin-top: 1%;
+        border-radius: 10px;
+        display:inline-block;
+    }
+    .gameScoreDisplay {
+        background:rgb(131, 131, 131);
+        width: 25%;
+        height: 40%;
+        border-radius: 10px;
+        display:inline-block;
+    }
+    /* -------------------------------------------------------------------------------------------------------------------------- TABLE */
+    .tableBar {
+        width:100%;
+        height:48%;
+        display:flex;
+        /* top:22%; */
+    }
+    .playerCard1 {
+        background:rgb(157, 128, 224);
+        width: 23.5%;
+        height: 33.3%;
+        margin-left: 0;
+        margin-top: 9.5%;
+        border-radius: 10px;
+        display:inline-block;
+    }
+    .table {
+        background:#a38c70;
+        width: 50%;
+        height: 100%;
+        margin: auto;
+        margin-top: 0%;
+        border-radius: 10px;
+        display:inline-block;
+    }
+    .usedCard2 {
+        background: #54bbe4;
+        width:12%;
+        height:29.1%;
+        display:inline-block;
+        margin:auto;
+        margin-top: 2%;
+        border-radius: 5px;
+    }
+    .usedCard1 {
+        background: #54bbe4;
+        width:12%;
+        height:29.1%;
+        display:inline-block;
+        margin:auto;
+        margin-top: 2%;
+        border-radius: 5px;
+    }
+    .usedCard3 {
+        background: #54bbe4;
+        width:12%;
+        height:29.1%;
+        display:inline-block;
+        margin:auto;
+        margin-top: 2%;
+        border-radius: 5px;
+    }
+    .usedCard0 {
+        background: #54bbe4;
+        width:12%;
+        height:29.1%;
+        display:inline-block;
+        margin:auto;
+        margin-top: 0.5%;
+        border-radius: 5px;
+    }
+    .usedCardFirst2 {
+        background: #74b438;
+        width:12%;
+        height:29.1%;
+        display:inline-block;
+        margin:auto;
+        margin-top: 2%;
+        border-radius: 5px;
+    }
+    .usedCardFirst1 {
+        background: #74b438;
+        width:12%;
+        height:29.1%;
+        display:inline-block;
+        margin:auto;
+        margin-top: 2%;
+        border-radius: 5px;
+    }
+    .usedCardFirst3 {
+        background: #74b438;
+        width:12%;
+        height:29.1%;
+        display:inline-block;
+        margin:auto;
+        margin-top: 2%;
+        border-radius: 5px;
+    }
+    .usedCardFirst0 {
+        background: #74b438;
+        width:12%;
+        height:29.1%;
+        display:inline-block;
+        margin:auto;
+        margin-top: 0.5%;
+        border-radius: 5px;
+    }
+    .usedCardEmpty2 {
+        background: #54bbe400;
+        width:12%;
+        height:29.1%;
+        display:inline-block;
+        margin:auto;
+        margin-top: 2%;
+        border-radius: 5px;
+    }
+    .usedCardEmpty1 {
+        background: #54bbe400;
+        width:12%;
+        height:29.1%;
+        display:inline-block;
+        margin:auto;
+        margin-top: 2%;
+        border-radius: 5px;
+    }
+    .usedCardEmpty3 {
+        background: #54bbe400;
+        width:12%;
+        height:29.1%;
+        display:inline-block;
+        margin:auto;
+        margin-top: 2%;
+        border-radius: 5px;
+    }
+    .usedCardEmpty0 {
+        background: #54bbe400;
+        width:12%;
+        height:29.1%;
+        display:inline-block;
+        margin:auto;
+        margin-top: 0.5%;
+        border-radius: 5px;
+    }
+    .tableMessageBox {
+        background:rgba(121, 168, 212, 0);
+        width: 70%;
+        margin: 0% 0.2% 0% 0.2%;
+        /* margin-top: 0%; */
+        height: 18%;
+        border-radius: 10px;
+        display:inline-block;
+        /* position:absolute; */
+    }
+    .playerCard3 {
+        background:rgb(223, 99, 99);
+        width: 23.5%;
+        height: 33.3%;
+        margin-right: 0%;
+        margin-top: 9.5%;
+        border-radius: 10px;
+        display:inline-block;
+    }
+    /* -------------------------------------------------------------------------------------------------------------------------- INFO */
+    .infoBar{
+        background:rgb(131, 131, 131);
+        width:100%;
+        height:10%;
+        display:flex;
+        border-radius: 10px;
+        margin-top: 1.5%;
+        /* top:100%; */
+    }
+    .triangle-left {
+        width: 0;
+        height: 0;
+        margin-top: 1%;
+        margin-left: 1%;
+        border-top: 25px solid transparent;
+        border-right: 50px solid #555;
+        border-bottom: 25px solid transparent;
+    }
+    .triangle-left:hover {
+        border-right: 50px solid rgb(59, 59, 59);
+    }
+    .currCall {
+        background:rgb(255, 255, 255);
+        width: 8%;
+        height: 80%;
+        margin-left: 1%;
+        margin-right: 1%;
+        margin-top: 0.5%;
+        border-radius: 10px;
+        display:inline-block;
+    }
+    .triangle-right {
+        width: 0;
+        height: 0;
+        margin-top: 1%;
+        border-top: 25px solid transparent;
+        border-left: 50px solid #555;
+        border-bottom: 25px solid transparent;
+    }
+    .triangle-right:hover {
+        border-left: 50px solid rgb(59, 59, 59);
+    }
+    .currValue {
+        background:rgb(255, 255, 255);
+        width: 19%;
+        height: 80%;
+        margin-left: 1%;
+        margin-right: 1%;
+        margin-top: 0.5%;
+
+        border-radius: 10px;
+        display:inline-block;
+    }
+    .lockBtn {
+        background:rgb(119, 171, 207);
+        width: 12%;
+        height: 80%;
+        margin-left: 1%;
+        margin-right: 1%;
+        margin-top: 0.5%;
+        border-radius: 10px;
+        display:inline-block;
+    }
+    .lockBtn:hover {
+        background:rgb(230, 30, 30);
+    }
+    .lockBtnUsed {
+        background:#666666;
+        width: 12%;
+        height: 80%;
+        margin-left: 1%;
+        margin-right: 1%;
+        margin-top: 0.5%;
+        border-radius: 10px;
+        display:inline-block;
+    }
+    .handWins {
+        background:rgb(255, 255, 255);
+        width: 20%;
+        height: 80%;
+        margin-left: 1%;
+        margin-right: 1%;
+        margin-top: 0.5%;
+        border-radius: 10px;
+        display:inline-block;
+    }
+    .reshuffle {
+        background:rgb(119, 171, 207);
+        width: 12%;
+        height: 80%;
+        margin-left: 1%;
+        margin-right: 1%;
+        margin-top: 0.5%;
+        border-radius: 10px;
+        display:inline-block;
+    }
+    .reshuffle:hover {
+        background:rgb(230, 30, 30);
+    }
+    .reshuffleDisabled {
+        background:#666666;
+        width: 12%;
+        height: 80%;
+        margin-left: 1%;
+        margin-right: 1%;
+        margin-top: 0.5%;
+        border-radius: 10px;
+        display:inline-block;
+    }
+    .startButton {
+        background: #93db8d;
+        width:10%;
+        height:80%;
+        margin-left: 1%;
+        margin-right: 1%;
+        margin-top: 0.5%;
+        display:inline-block;
+        border-radius: 50%;
+        /* float:right; */
+    }
+    .startButton:hover {
+        background: #72c029
+    }
+    .startButtonUsed {
+        background: #666666;
+        width:10%;
+        height:80%;
+        margin-left: 1%;
+        margin-right: 1%;
+        margin-top: 0.5%;
+        display:inline-block;
+        border-radius: 50%;
+        /* float:right; */
+    }
+    /* -------------------------------------------------------------------------------------------------------------------------- CARDS */
+    .playerButtonBar {
+        width:100%;
+        height:20%;
+        margin-top: 0%;
+        display:flex;
+        bottom:2%;
+        left:0;
+        /* position:absolute; */
+    }
+    .playerButton {
+        background: #54bbe4;
+        width:6%;
+        height:70%;
+        display:inline-block;
+        margin:auto;
+        border-radius: 5px;
+    }
+    .playerButton:hover {
+        background: #74b438;
+    }
+    .playerButtonUsed {
+        background: #666666;
+        width:6%;
+        height:70%;
+        display:inline-block;
+        margin:auto;
+        border-radius: 5px;
+    }
+
+    .image { 
+        position: relative; 
+        margin-top: 5%;
+        margin-bottom: 0%;
+        margin-left: 0%;
+        margin-right: 30%;
+        width: 100%;
+        user-select: none;
+    }
+    h1 { 
+        position: absolute; 
+        top: 12%;
+        left: 0; 
+        width: 100%; 
+        user-select: none;
+    }
+
+</style>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js" type="text/javascript"></script>
+<script src="/socket.io/socket.io.js"></script>
+<audio id ="turnAudio"><source src="./client/turnSound.mp3" type=audio/mpeg>Your browser does not support the audio element.</audio>
+<img style="height:0%;width:0%" src="./client/heart.png">
+<img style="height:0%;width:0%" src="./client/diamond.png">
+<img style="height:0%;width:0%" src="./client/club.png">
+<img style="height:0%;width:0%" src="./client/spade.png">
+<img style="height:0%;width:0%" src="./client/emptyCard.png">
+
+<div class="gameContainer">
+    <div class = "topBar" id = "topBar">
+        <div class = "playerNumber">
+            <h2 style="color:rgb(0, 0, 0);top:0;margin-top:2.5%;user-select:none;font-size:3vmin;" id="playerNumberInsert">Player #-1</h2>
+        </div>
+        <div class = "playerCard2">
+            <h3 id="playerCardUpper2" style="user-select:none;font-size:3vmin;">#-1 Game Score: 0</h3>
+            <h3 id="playerCardLower2" style="user-select:none;font-size:3vmin;">Call: 0 Made: 0</h3>
+        </div>
+        <div class = "gameScoreDisplay">
+            <h2 style="color:rgb(0, 0, 0);top:0;margin-top:2.5%;user-select:none;font-size:3vmin;" id="gameScoreInsert">Game Score: 0</h2>
+        </div>
+    </div>
+
+    <div class = "tableBar">
+        <div class = "playerCard1">
+            <h4 id="playerCardUpper1" style="user-select:none;font-size:3vmin;">#-1 Game Score: 0</h4>
+            <h4 id="playerCardLower1" style="user-select:none;font-size:3vmin;">Call: 0 Made: 0</h4>
+        </div>
+        <div class = "table">
+            <div>
+                <div class="usedCardEmpty2" id="tableCard2">
+                    <div class="image">
+                        <img style="height:90%;width:90%" src="./client/emptyCard.png" id="insertTableSuit2">
+                        <h1 style="color:white;font-weight:bold" id="insertTableValue2"></h1>
+                    </div>
+                </div>    
+            </div>
+            <div>
+                <div class="usedCardEmpty1" id="tableCard1">
+                    <div class="image">
+                        <img style="height:90%;width:90%" src="./client/emptyCard.png" id="insertTableSuit1">
+                        <h1 style="color:white;font-weight:bold" id="insertTableValue1"></h1>
+                    </div>
+                </div>
+                <div class = "tableMessageBox">
+                    <h2 style="left:0; right:0;user-select:none;font-size:3vmin;position:relative;" id="tableMessageInsert">400 Card Game</h2>
+                </div>
+                <div class="usedCardEmpty3" id="tableCard3">
+                    <div class="image">
+                        <img style="height:90%;width:90%" src="./client/emptyCard.png" id="insertTableSuit3">
+                        <h1 style="color:white;font-weight:bold" id="insertTableValue3"></h1>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="usedCardEmpty0" id="tableCard0">
+                    <div class="image">
+                        <img style="height:90%;width:90%" src="./client/emptyCard.png" id="insertTableSuit0">
+                        <h1 style="color:white;font-weight:bold" id="insertTableValue0"></h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class = "playerCard3">
+            <h4 id="playerCardUpper3" style="user-select:none;font-size:3vmin;">#-1 Game Score: 0</h4>
+            <h4 id="playerCardLower3" style="user-select:none;font-size:3vmin;">Call: 0 Made: 0</h4>
+        </div>
+    </div>
+
+    <div class = "infoBar">
+        <div class = "triangle-left" onclick="leftArrow()"></div>
+        <div class = "currCall">
+            <h2 style="color:rgb(0, 0, 0);top:0;margin-top:6%;user-select:none;font-size:3vmin;" id="currCallInsert">2</h2>
+        </div>
+        <div class = "triangle-right" onclick="rightArrow()"></div>
+        <div class = "currValue">
+            <h2 style="color:rgb(0, 0, 0);top:0;margin-top:3%;user-select:none;font-size:3vmin;" id="currValueInsert">Potential: 2</h2>
+        </div>
+        <div class = "lockBtn" id="LockButton" onclick="lockIn()">
+            <h2 style="color:rgb(0, 0, 0);top:0;margin-top:3%;user-select:none;font-size:3vmin;" >Lock In</h2>
+        </div>
+        <div class = "handWins">
+            <h2 style="color:rgb(0, 0, 0);top:0;margin-top:1.5%;user-select:none;width: 100%;margin-right:1%;font-size:3vmin;" id="handsWonInsert">Hands Won: 0</h2>
+        </div>
+        <div class = "reshuffleDisabled" id="reshuffleBtn" onclick="force_reshuffle()">
+            <h2 style="color:rgb(0, 0, 0);top:0;margin-top:3%;user-select:none;font-size:3vmin;">Reshuffle</h2>
+        </div>
+        <div class = "startButton" id="startBtn" onclick="roundStart(0)">
+            <h2 style="color:rgb(0, 0, 0);top:0;margin-top:3%;user-select:none;font-size:3vmin;">start</h2>
+        </div>
+    </div>
+    
+    <div class="playerButtonBar" id="buttonBar">
+        <div class="playerButton" id="card0" onclick="playerChose(0)">
+            <div class="image">
+                <img style="height:90%;width:90%" src="./client/heart.png" id="insertSuit0">
+                <h1 style="color:white;font-weight:bold" id="insertValue0"></h1>
+            </div>
+        </div>
+        <div class="playerButton" id="card1" onclick="playerChose(1)">
+            <div class="image">
+                <img style="height:90%;width:90%" src="./client/heart.png" id="insertSuit1">
+                <h1 style="color:white;font-weight:bold" id="insertValue1"></h1>
+            </div>
+        </div>
+        <div class="playerButton" id="card2" onclick="playerChose(2)">
+            <div class="image">
+                <img style="height:90%;width:90%" src="./client/heart.png" id="insertSuit2">
+                <h1 style="color:white;font-weight:bold" id="insertValue2"></h1>
+            </div>
+        </div>
+        <div class="playerButton" id="card3" onclick="playerChose(3)">
+            <div class="image">
+                <img style="height:90%;width:90%" src="./client/heart.png" id="insertSuit3">
+                <h1 style="color:white;font-weight:bold" id="insertValue3"></h1>
+            </div>
+        </div>
+        <div class="playerButton" id="card4" onclick="playerChose(4)">
+            <div class="image">
+                <img style="height:90%;width:90%" src="./client/heart.png" id="insertSuit4">
+                <h1 style="color:white;font-weight:bold" id="insertValue4"></h1>
+            </div>
+        </div>
+        <div class="playerButton" id="card5" onclick="playerChose(5)">
+            <div class="image">
+                <img style="height:90%;width:90%" src="./client/heart.png" id="insertSuit5">
+                <h1 style="color:white;font-weight:bold" id="insertValue5"></h1>
+            </div>
+        </div>
+        <div class="playerButton" id="card6" onclick="playerChose(6)">
+            <div class="image">
+                <img style="height:90%;width:90%" src="./client/heart.png" id="insertSuit6">
+                <h1 style="color:white;font-weight:bold" id="insertValue6"></h1>
+            </div>
+        </div>
+        <div class="playerButton" id="card7" onclick="playerChose(7)">
+            <div class="image">
+                <img style="height:90%;width:90%" src="./client/heart.png" id="insertSuit7">
+                <h1 style="color:white;font-weight:bold" id="insertValue7"></h1>
+            </div>
+        </div>
+        
+        <div class="playerButton" id="card8" onclick="playerChose(8)">
+            <div class="image">
+                <img style="height:90%;width:90%" src="./client/heart.png" id="insertSuit8">
+                <h1 style="color:white;font-weight:bold" id="insertValue8"></h1>
+            </div>
+        </div>
+        <div class="playerButton" id="card9" onclick="playerChose(9)">
+            <div class="image">
+                <img style="height:90%;width:90%" src="./client/heart.png" id="insertSuit9">
+                <h1 style="color:white;font-weight:bold" id="insertValue9"></h1>
+            </div>
+        </div>
+        <div class="playerButton" id="card10" onclick="playerChose(10)">
+            <div class="image">
+                <img style="height:90%;width:90%" src="./client/heart.png" id="insertSuit10">
+                <h1 style="color:white;font-weight:bold" id="insertValue10"></h1>
+            </div>
+        </div>
+        <div class="playerButton" id="card11" onclick="playerChose(11)">
+            <div class="image">
+                <img style="height:90%;width:90%" src="./client/heart.png" id="insertSuit11">
+                <h1 style="color:white;font-weight:bold" id="insertValue11"></h1>
+            </div>
+        </div>
+        <div class="playerButton" id="card12" onclick="playerChose(12)">
+            <div class="image">
+                <img style="height:90%;width:90%" src="./client/heart.png" id="insertSuit12">
+                <h1 style="color:white;font-weight:bold" id="insertValue12"></h1>
+            </div>
+        </div>
+    </div>
+
+</div>
+<div class="chatContainer">
+    <!-- <div>Chat</div> -->
+    <h6 style="color:rgb(0, 0, 0);top:0;margin-top:0%;margin-bottom:0%;user-select:none;font-size:2.5vmin;">Chat</h6>
+    <div id="chat-text" class="chatBox"></div>
+    <form id="chat-form"><input id="chat-input" style="width: 60%; height: 30px;" autocomplete="off" type="text" /> <input class="btn" type="submit" value="Send" /></form>
+</div>
+
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:700,600" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" type="text/css">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js" type="text/javascript"></script>
+<script src="/socket.io/socket.io.js"></script>
+
+
+
+<script>
+    var chatText = document.getElementById('chat-text');
+    var chatInput = document.getElementById('chat-input');
+    var chatForm = document.getElementById('chat-form');
+
+	var socket = io();
+    var typing = false;
+    var first_card = true;
+    var playerId;
+    var game_score = 0;
+    var hands_won = 0;
+    var currCallHolder = 2;
+    var locked_in_number = 0;
+    var reshuffle_enabled = false;
+    var tableMessageGlobal = "";
+    var first_card_of_round = false;
+
+    function playerChose(data) {
+        socket.emit('cardSubmit', data);
+        //disable the card that the player chose
+    }
+
+    function suitTranslate(data) {
+        if (data == 3) {
+            return "./client/heart.png";
+        }
+        else if (data == 2) {
+            return "./client/spade.png";
+        }
+        else if (data == 1) {
+            return "./client/diamond.png";
+        }
+        else if (data == 0) {
+            return "./client/club.png";
+        }
+        else {
+            console.log("something went wrong :(");
+        }
+    }
+
+    function valueTranslate(data) {
+        if (data == 13) {
+            return "A";
+        }
+        else if (data == 12) {
+            return "K";
+        }
+        else if (data == 11) {
+            return "Q";
+        }
+        else if (data == 10) {
+            return "J";
+        }
+        // else if (data == 1) {
+        //     return "2";
+        // }
+        else {
+            return data + 1;
+        }
+    }
+
+    function callTranslate(data) {
+        if (data < 5) {
+            return "Potential: " + data;
+        }
+        else if (data < 9) {
+            return "Potential: " + data * 2;
+        }
+        else if (data < 13) {
+            return "Potential: " + data * 3;
+        }
+        else {
+            return "Instant Win";
+        }
+    }
+
+    function rightArrow() {
+        if (currCallHolder < 13 && !first_card_of_round) {
+            currCallHolder++;
+            socket.emit('lockIn', currCallHolder, false);
+            document.getElementById("LockButton").classList.remove("lockBtnUsed");
+            document.getElementById("LockButton").classList.add("lockBtn");
+        }
+        document.getElementById("currCallInsert").innerHTML = currCallHolder;
+        document.getElementById("currValueInsert").innerHTML = callTranslate(currCallHolder);
+    }
+
+    function lockIn() {
+        document.getElementById("LockButton").classList.remove("lockBtn");
+        document.getElementById("LockButton").classList.add("lockBtnUsed");
+        socket.emit('lockIn', currCallHolder, true);
+        locked_in_number = currCallHolder;
+    }
+
+    function force_reshuffle() {
+        if (reshuffle_enabled) {
+            socket.emit('force_reshuffle');
+            document.getElementById("reshuffleBtn").classList.remove("reshuffle");
+            document.getElementById("reshuffleBtn").classList.add("reshuffleDisabled");
+            reshuffle_enabled = false;
+        }
+    }
+
+    function leftArrow() {
+        if (currCallHolder > 2 && currCallHolder > locked_in_number) {
+            currCallHolder--;
+        }
+        document.getElementById("currCallInsert").innerHTML = currCallHolder;
+        document.getElementById("currValueInsert").innerHTML = callTranslate(currCallHolder);
+        
+    }
+
+    function roundStart(data) {
+        var x = document.getElementById("myAudio");
+        socket.emit('roundStart', data);
+    }
+
+    socket.on('setPlayerId',function(data){
+        playerId = data;
+        console.log("playerId = " + playerId);
+        document.getElementById("playerNumberInsert").innerHTML = "Player #" + playerId;
+    });
+
+    socket.on('playerTurnChanged',function(data){
+        document.getElementById("tableMessageInsert").innerHTML = data + "'s turn";
+        tableMessageGlobal = data + "'s turn";
+        if (data == playerId) {
+            document.getElementById("turnAudio").play();
+        }
+    });
+
+    socket.on('dealCards', function(data, data2) {
+
+        for (i = 0; i < 4; i++) {
+            if (i != playerId) {
+                document.getElementById("playerCardUpper" + ((i + playerId * 3) % 4)).innerHTML = "#" + i + " Game Score: " + data2[i].game_score;
+                document.getElementById("playerCardLower" + ((i + playerId * 3) % 4)).innerHTML = "Call: " + data2[i].call + " Made: " + data2[i].round_score;
+            }
+        }
+        
+        document.getElementById("reshuffleBtn").classList.remove("reshuffle");
+        document.getElementById("reshuffleBtn").classList.add("reshuffleDisabled");
+        document.getElementById("LockButton").classList.remove("lockBtnUsed");
+        document.getElementById("LockButton").classList.add("lockBtn");
+        document.getElementById("startBtn").classList.remove("startButton");
+        document.getElementById("startBtn").classList.add("startButtonUsed");
+
+        reshuffle_enabled = false;
+
+        if (game_score >= 40) {
+            locked_in_number = 4;
+        }
+        else if (game_score >= 31) {
+            locked_in_number = 3;
+        }
+        else {
+            locked_in_number = 2;
+        }
+
+        currCallHolder = locked_in_number;
+        document.getElementById("currCallInsert").innerHTML = currCallHolder;
+        document.getElementById("currValueInsert").innerHTML = callTranslate(currCallHolder);
+
+
+        for (i = 0; i < 13; i++) {
+            document.getElementById("insertValue" + i).innerHTML = valueTranslate(data[i].Value);
+            document.getElementById("insertSuit" + i).src = suitTranslate(data[i].Suit);
+            document.getElementById("card" + i).classList.remove("playerButtonUsed");
+            document.getElementById("card" + i).classList.add("playerButton");
+        }
+        hands_won = 0;
+        document.getElementById("handsWonInsert").innerHTML = "Hands Won: " + hands_won;
+        document.getElementById("tableMessageInsert").innerHTML = "Players Call";
+        tableMessageGlobal = "Players Call";
+    });
+
+    socket.on('playerLockedIn', function(data) { //data = playerdata
+        for (i = 0; i < 4; i++) {
+            if (i != playerId) {
+                document.getElementById("playerCardUpper" + ((i + playerId * 3) % 4)).innerHTML = "#" + i + " Game Score: " + data[i].game_score;
+                document.getElementById("playerCardLower" + ((i + playerId * 3) % 4)).innerHTML = "Call: " + data[i].call + " Made: " + data[i].round_score;
+            }
+        }
+    });
+
+    socket.on('roundEnd', function(data) { //data = playerdata
+        for (i = 0; i < 4; i++) {
+            if (i != playerId) {
+                document.getElementById("playerCardUpper" + ((i + playerId * 3) % 4)).innerHTML = "#" + i + " Game Score: " + data[i].game_score;
+                // document.getElementById("playerCardLower" + ((i + playerId * 3) % 4)).innerHTML = "Call: " + data[i].call + " Made: " + data[i].round_score;
+            }
+            else {
+                game_score = data[i].game_score;
+            }
+        }
+        first_card_of_round = false;
+        document.getElementById("tableMessageInsert").innerHTML = "Round Over";
+        document.getElementById("startBtn").classList.remove("startButtonUsed");
+        document.getElementById("startBtn").classList.add("startButton");
+        document.getElementById("gameScoreInsert").innerHTML = "Game Score: " + data[playerId].game_score;
+
+        if (game_score >= 40) {
+            locked_in_number = 4;
+        }
+        else if (game_score >= 31) {
+            locked_in_number = 3;
+        }
+        else {
+            locked_in_number = 2;
+        }
+
+        currCallHolder = locked_in_number;
+
+
+        setTimeout(() => { 
+            for (i = 0; i < 4; i++) {
+                if (i != playerId) {
+                    // document.getElementById("playerCardUpper" + ((i + playerId * 3) % 4)).innerHTML = "#" + ((i + playerId * 3) % 4) + " Game Score: " + data[i].game_score;
+                    document.getElementById("playerCardLower" + ((i + playerId * 3) % 4)).innerHTML = "Call: " + data[i].call + " Made: " + data[i].round_score;
+                }
+                else {
+                    document.getElementById("currCallInsert").innerHTML = currCallHolder;
+                    document.getElementById("currValueInsert").innerHTML = callTranslate(currCallHolder);
+                }
+                
+            } 
+            document.getElementById("tableMessageInsert").innerHTML = "Press Start to Continue";
+        }, 5000);
+
+    });
+
+    socket.on('winnerDeclared', function(data, data2, data3){ //data = player that won, data2 = player's curr round score, data3 = player info
+        if (data == playerId) {
+            console.log("i win");
+            hands_won++;
+            document.getElementById("handsWonInsert").innerHTML = "Hands Won: " + hands_won;
+        }
+        else {
+            console.log("player " + data + " wins");
+        }
+        first_card = true;
+        document.getElementById("tableMessageInsert").innerHTML = "Player " + data + " Won the Hand";
+        tableMessageGlobal = "Player " + data + " Won the Hand";
+
+        for (i = 0; i < 4; i++) {
+            if (i != playerId) {
+                document.getElementById("playerCardUpper" + ((i + playerId * 3) % 4)).innerHTML = "#" + i + " Game Score: " + data3[i].game_score;
+                document.getElementById("playerCardLower" + ((i + playerId * 3) % 4)).innerHTML = "Call: " + data3[i].call + " Made: " + data3[i].round_score;
+            }
+        }
+
+        setTimeout(() => { 
+            for (i = 0; i < 4; i++) {
+                document.getElementById("insertTableValue" + i).innerHTML = "";
+                document.getElementById("insertTableSuit" + i).src = "./client/emptyCard.png";
+                document.getElementById("tableCard" + i).classList.remove("usedCard" + i);
+                document.getElementById("tableCard" + i).classList.remove("usedCardFirst" + i);
+                document.getElementById("tableCard" + i).classList.add("usedCardEmpty" + i);
+            } 
+            // document.getElementById("tableMessageInsert").innerHTML = " ";
+        }, 5000);
+    });
+    
+    socket.on('valid_test', function(data, data2){
+        if (data == 1) {
+            // document.getElementById("card" + data2).style.background = "rgb(102, 102, 102)";
+            document.getElementById("card" + data2).classList.remove("playerButton");
+            document.getElementById("card" + data2).classList.add("playerButtonUsed");
+        }
+        else {
+            document.getElementById("tableMessageInsert").innerHTML = "Invalid Card or Out of Turn";
+            setTimeout(() => { 
+                document.getElementById("tableMessageInsert").innerHTML = tableMessageGlobal;
+            }, 2000);
+        }
+        
+
+    });
+    
+    socket.on('cardPlayed', function(data, data2){ //player that played the card, card that was played
+        var first_text = "";
+
+        
+        if (first_card) {
+            first_card_of_round = true;
+            first_text = "First";
+            first_card = false;
+        }
+        //disable call changing
+        document.getElementById("insertTableValue" + ((data + playerId * 3) % 4)).innerHTML = valueTranslate(data2.Value);
+        document.getElementById("insertTableSuit" + ((data + playerId * 3) % 4)).src = suitTranslate(data2.Suit);
+        document.getElementById("tableCard" + ((data + playerId * 3) % 4)).classList.remove("usedCardEmpty" + ((data + playerId * 3) % 4));
+        document.getElementById("tableCard" + ((data + playerId * 3) % 4)).classList.add("usedCard" + first_text + ((data + playerId * 3) % 4));
+    }); 
+
+    socket.on('gameEnd', function(data, data2, data3){
+        for (i = 0; i < 4; i++) {
+            if (i != playerId) {
+                document.getElementById("playerCardUpper" + ((i + playerId * 3) % 4)).innerHTML = "#" + i + " Game Score: " + data3[i].game_score;
+                document.getElementById("playerCardLower" + ((i + playerId * 3) % 4)).innerHTML = "Call: " + data3[i].call + " Made: " + data3[i].round_score;
+            }
+        }
+        document.getElementById("gameScoreInsert").innerHTML = "Game Score: " + data3[playerId].game_score;
+        
+        setTimeout(() => { 
+            for (i = 0; i < 4; i++) {
+                document.getElementById("insertTableValue" + i).innerHTML = "";
+                document.getElementById("insertTableSuit" + i).src = "./client/emptyCard.png";
+                document.getElementById("tableCard" + i).classList.remove("usedCard" + i);
+                document.getElementById("tableCard" + i).classList.remove("usedCardFirst" + i);
+                document.getElementById("tableCard" + i).classList.add("usedCardEmpty" + i);
+            } 
+            document.getElementById("tableMessageInsert").innerHTML = "Players " + data + " and " + data2 + " Win";
+        }, 5000);
+
+    });
+
+    socket.on('reshuffleEnable', function(data){ //data is true false, true if reshuffle is allowed
+        if (data) {
+            document.getElementById("reshuffleBtn").classList.remove("reshuffleDisabled");
+            document.getElementById("reshuffleBtn").classList.add("reshuffle");
+            reshuffle_enabled = true;
+            document.getElementById("tableMessageInsert").innerHTML = "Reshuffle Enabled";
+        }
+        else if (!data) {
+            document.getElementById("reshuffleBtn").classList.remove("reshuffle");
+            document.getElementById("reshuffleBtn").classList.add("reshuffleDisabled");
+            reshuffle_enabled = false;
+            // document.getElementById("tableMessageInsert").innerHTML = "Reshuffle Disabled";
+        }
+
+        setTimeout(() => { 
+            document.getElementById("tableMessageInsert").innerHTML = tableMessageGlobal;
+        }, 2000);
+    });
+    
+    socket.on('reshuffleUsed', function(data){
+        document.getElementById("tableMessageInsert").innerHTML = "Player " + data + " reshuffled";
+        locked_in_number = 2;
+        for (i = 0; i < 4; i++) {
+            if (i != playerId) {
+                document.getElementById("playerCardLower" + ((i + playerId * 3) % 4)).innerHTML = "Call: 0 Made: 0";
+            }
+        }
+        setTimeout(() => { 
+            document.getElementById("tableMessageInsert").innerHTML = "Players Call";
+            tableMessageGlobal = "Players Call";
+        }, 2000);
+    });
+	
+	socket.on('addToChat', function(data, data2){ //add a chat cell to our chat list view, and scroll to the bottom
+        // console.log('got a chat message');
+		chatText.innerHTML += '<div class="chatCell" style="text-align: left;">' + data2 + ": " + data + '</div>';
+        chatText.scrollTop = chatText.scrollHeight;  
+    });
+    
+    socket.on('playerNumberReassign', function(players, hand, round_start, new_player_id){
+        playerId = new_player_id;
+        console.log("playerId = " + playerId);
+        document.getElementById("playerNumberInsert").innerHTML = "Player #" + playerId;
+        document.getElementById("gameScoreInsert").innerHTML = "Game Score: " + players[playerId].game_score;
+        
+
+        for (i = 0; i < 4; i++) {
+            if (i != playerId) {
+                document.getElementById("playerCardUpper" + ((i + playerId * 3) % 4)).innerHTML = "#" + i + " Game Score: " + players[i].game_score;
+                document.getElementById("playerCardLower" + ((i + playerId * 3) % 4)).innerHTML = "Call: " + players[i].call + " Made: " + players[i].round_score;
+            }
+            else {
+                game_score = players[i].game_score;
+            }
+        }
+        if (round_start) {
+            for (i = 0; i < 13; i++) {
+                document.getElementById("insertValue" + i).innerHTML = valueTranslate(hand[i].Value);
+                document.getElementById("insertSuit" + i).src = suitTranslate(hand[i].Suit);
+                document.getElementById("card" + i).classList.remove("playerButtonUsed");
+                document.getElementById("card" + i).classList.add("playerButton");
+            }
+            document.getElementById("LockButton").classList.remove("lockBtn");
+            document.getElementById("LockButton").classList.add("lockBtnUsed");
+            document.getElementById("reshuffleBtn").classList.remove("reshuffle");
+            document.getElementById("reshuffleBtn").classList.add("reshuffleDisabled");
+            document.getElementById("startBtn").classList.remove("startButton");
+            document.getElementById("startBtn").classList.add("startButtonUsed");
+        }
+
+
+    });
+
+
+
+	chatForm.onsubmit = function(e){
+        e.preventDefault(); //prevent the form from refreshing the page
+        if (chatInput.value != ""){
+            //call sendMsgToServer socket function, with form text value as argument    
+            socket.emit('sendMsgToServer', chatInput.value);
+            chatInput.value = "";
+        }   
+    }
+    
+    document.addEventListener('DOMContentLoaded', function() {                  
+        document.getElementById('chat-input').addEventListener('focus', function() {
+            typing = true;
+        });
+        document.getElementById('chat-input').addEventListener('blur', function() {
+            typing = false;
+        });
+    });
+        
+	document.onkeyup = function(event){
+        //user pressed and released enter key
+        if(event.keyCode === 13){
+            if(!typing){
+                //user is not already typing, focus our chat text form
+                chatInput.focus();
+            }
+            
+            else {   
+                //user sent a message, unfocus our chat form
+                chatInput.blur();
+            }
+        }
+	}
+
+</script>

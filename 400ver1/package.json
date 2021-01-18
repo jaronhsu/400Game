@@ -1,0 +1,15 @@
+{
+  "name": "400ver1packagename",
+  "version": "1.0.0",
+  "description": "ver1",
+  "main": "index.js",
+  "scripts": {
+    "test": "potato"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "socket.io": "^3.0.4"
+  }
+}
